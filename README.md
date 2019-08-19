@@ -2,7 +2,7 @@
 
 A jQuery plugin that instantiates a Google Map with a Home Location and allows users to request directions on how to get there.
 
-Check out the [LIVE DEMO]()
+Check out the [LIVE DEMO](http://examples.mikevsweb.com/get-directions-with-google-maps/)
 
 Still needs some improvement for implementation like remove of class dependencies, 'type' not working and the form should have a Reset button. Use at own risk.
 
@@ -14,7 +14,7 @@ Where the Google Maps API is requested you will need to add your own [API Key](h
 <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key={your-api-key}">
 ```
 
-The following will need to be added after jQuery has loaded.
+The following will need to be added after jQuery has loaded. This will be the Home location on the map.
 
 ```javascript
 $('#FindMeOnGoogleMap').GetDirectionsWithGoogleMaps({
@@ -27,7 +27,7 @@ $('#FindMeOnGoogleMap').GetDirectionsWithGoogleMaps({
 });
 ```
 
-For it to work like the [demo](), you will need to copy over the following HTML:
+For it to work like the [demo](http://examples.mikevsweb.com/get-directions-with-google-maps/), you will need to copy over the following HTML:
 
 ```HTML
 <div id="FindMeOnGoogleMap">						
@@ -49,8 +49,14 @@ For it to work like the [demo](), you will need to copy over the following HTML:
                     <input class="input is-info" type="text" name="FindMeOnGoogleMapStart" id="FindMeOnGoogleMapStart" placeholder="Enter Address, Postal Code, City, etc." onclick="document.getElementById(this.id).value= '';">
                 </div>
             </div>
-            <button class="calculate button is-link">Submit</button>
-            <button class="reset button is-info">Reset</button>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="calculate button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button class="reset button is-info">Reset</button>
+                </div>
+            </div>
         </div>
     </div>
     <div id="map"></div>
@@ -59,13 +65,13 @@ For it to work like the [demo](), you will need to copy over the following HTML:
 
 ## Built With
 
-* [jQuery](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Google Maps](https://maven.apache.org/) - Dependency Management
+* [jQuery](https://jquery.com/) - a fast, small, and feature-rich JavaScript library
+* [Google Maps](https://cloud.google.com/maps-platform/) - bring the real world to your users with static and dynamic maps, Street View imagery, and 360° views.
 * [Bulma](https://bulma.io) - a free, open source CSS framework based on Flexbox
 
 ## Authors
 
-* **Michael C. Breuer** - *Initial work* - [michabre]()
+* **Michael C. Breuer** - *Initial work* - [michabre](https://github.com/michabre)
 
 ## License
 
