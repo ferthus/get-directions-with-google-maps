@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<title>Get Directions on a Google Map Tutorial by Michael C. Breuer</title>
+	<meta name="author" content="Michael C. Breuer">
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key={your-api-key}"></script>
+  	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1 class="is-size-2">Get Directions with Google Maps</h1>
+		</header>
+		<main>
+			<div id="FindMeOnGoogleMap">						
+				<div class="controls columns">						
+					<div class="column is-one-third">
+						<h3 class="is-size-3">I want to get there by</h3>
+						<div class="select is-large">
+							<select name="select">
+								<option value="BICYCLING">Bicycling</option> 
+								<option value="DRIVING" selected>Driving</option>
+								<option value="TRANSIT">Transit</option>
+								<option value="WALKING">Walking</option>
+							</select>
+						</div>
+					</div> 
+					<div class="column is-two-thirds">
+						<div class="field">
+							<div class="control">
+								<input class="input is-info" type="text" name="FindMeOnGoogleMapStart" id="FindMeOnGoogleMapStart" placeholder="Enter Address, Postal Code, City, etc." onclick="document.getElementById(this.id).value= '';">
+							</div>
+						</div>
+						<button class="calculate button is-link">Submit</button>
+						<button class="reset button is-info">Reset</button>
+					</div>
+				</div>
+				<div id="map"></div>
+			</div>	
+		</main>
+
+		<footer>
+		</footer>
+	</div>
+
+	<!-- vendors -->
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../GetDirectionsWithGoogleMaps.js"></script>
+
+    <script type="text/javascript">
+    	$("#FindMeOnGoogleMap").GetDirectionsWithGoogleMaps({
+			name: 'Awesome Store',
+			description: 'A place where you can buy awesome stuff for your awesome lifestyle',
+			latitude: 48.424050,
+			longitude: -123.357708,
+			type: 'ROADMAP', 
+			zoom: 13
+		});
+    </script>
+</body>
+</html>
